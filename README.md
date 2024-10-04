@@ -4,7 +4,36 @@ This repository contains the code and resources for a **Recipe Recommendation Sy
 
 ## 📁 Project Structure
 
-recipe-recommendation-api/ │ ├── api/ │ ├── app.py # 🖥️ Main Flask application │ ├── route.py # 🔄 API route definitions │ ├── requirements.txt # 📦 Python dependencies │ ├── data/ │ ├── raw/ │ │ ├── recipes_raw.csv # 📊 Raw recipe data │ │ └── recipes_raw(without hindi).csv # 📊 Raw data (excluding Hindi text) │ └── processed/ │ └── recipes_processed.csv # 🧹 Preprocessed recipe data │ ├── models/ │ ├── train_model.ipynb # 📓 Model training notebook │ └── recipe_recommendation_model.pkl # 🤖 Trained recommendation model │ ├── scraping/ │ └── scrape_recipes.ipynb # 🍴 Web scraping notebook for collecting recipes │ ├── static/ │ └── images/ │ └── [background image] # 🖼️ Background image for the website │ ├── templates/ │ └── index.html # 🌐 Main HTML file for the web interface │ └── README.md # 📖 Project overview and instructions
+recipe-recommendation-api/
+│
+├── api/
+│   ├── app.py                   # 🖥️ Main Flask application
+│   ├── route.py                 # 🔄 API route definitions
+│   ├── requirements.txt         # 📦 Python dependencies
+│
+├── data/
+│   ├── raw/
+│   │   ├── recipes_raw.csv       # 📊 Raw recipe data
+│   │   └── recipes_raw(without hindi).csv  # 📊 Raw data (excluding Hindi text)
+│   └── processed/
+│       └── recipes_processed.csv # 🧹 Preprocessed recipe data
+│
+├── models/
+│   ├── train_model.ipynb         # 📓 Model training notebook
+│   └── recipe_recommendation_model.pkl  # 🤖 Trained recommendation model
+│
+├── scraping/
+│   └── scrape_recipes.ipynb      # 🍴 Web scraping notebook for collecting recipes
+│
+├── static/
+│   └── images/
+│       └── [background image]    # 🖼️ Background image for the website
+│
+├── templates/
+│   └── index.html                # 🌐 Main HTML file for the web interface
+│
+└── README.md                     # 📖 Project overview and instructions
+
 
 ## 🌟 Project Overview
 
