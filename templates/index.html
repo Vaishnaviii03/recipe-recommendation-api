@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavour Fusion</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif;
+            background-image: url('{{ url_for('static', filename='images/1_dxmoKN22lsWYdAOm_7I0uw.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center -50px; /* Adjusted vertical position */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Overlay for better text contrast */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to improve contrast */
+            z-index: 1;
+        }
+
+        h1, h2 {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ffde59;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            color: #ffde59;
+            margin-top: 30px;
+            font-size: 2em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ff6347;
+            outline: none;
+        }
+
+        button, input[type="reset"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6347;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover, input[type="reset"]:hover {
+            background-color: #e5533d;
+            transform: translateY(-2px);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        li {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for list items */
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            color: #ffde59; /* Make text color stand out */
+            text-align: left; /* Align text to the left for better readability */
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Styling for the recipe images */
+        img.recipe-image {
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #fff;
+            font-size: 0.9em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flavour Fusion</h1>
+    <h2>"Whip up flavours with ease"</h2>
+    <form method="POST" id="recipeForm">
+        <input type="text" name="ingredients" placeholder="Enter ingredients, e.g., tomato, basil, cheese" required value="{{ ingredients if ingredients else '' }}">
+        <button type="submit">Get Recipes</button>
+        <input type="reset" value="Reset" onclick="resetForm();">
+    </form>
+
+    {% if results %}
+        <h2>Top Recipes:</h2>
+        <ul>
+            {% for result in results %}
+                <li>
+                    <strong>Recipe:</strong> {{ result.name }}<br>
+                    <strong>Ingredients:</strong> {{ result.ingredients }}<br>
+                    {% if result.image_url %}
+                        <img src="{{ result.image_url }}" 
+                             alt="Image of {{ result.name }}" class="recipe-image" 
+                             onerror="this.onerror=null; this.src='{{ url_for('static', filename='images/default_image.png') }}';">
+                    {% else %}
+                        <p>No image available for this recipe.</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <footer>
+        &copy; 2024 Yum Craft. All rights reserved.
+    </footer>
+
+    <script>
+        function resetForm() {
+            // Redirect to the same URL to refresh the page
+            window.location.href = window.location.href.split('?')[0];
+        }
+    </script>
+</body>
+</html>
