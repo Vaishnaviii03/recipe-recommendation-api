@@ -88,4 +88,12 @@ To train or retrain the recommendation model:
 
 ### 🍴 Scraping Recipes
 
-To scrape new recipes, run the notebook `scraping/scrape_recipes.ipynb`. This will gather recipe data from the website
+To scrape new recipes, run the notebook `scraping/scrape_recipes.ipynb`. This will gather recipe data from the specified sources and save it to the `data/raw` folder.
+
+## 🤝 Contributing
+
+Feel free to submit issues or pull requests if you have suggestions for improving the system or adding new features.
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
