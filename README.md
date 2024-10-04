@@ -3,7 +3,7 @@
 This repository contains the code and resources for a **Recipe Recommendation System**. The system uses a trained machine learning model to suggest recipes based on user input. The project includes data scraping, preprocessing, model training, and a Flask API to serve recipe recommendations.
 
 ## 📁 Project Structure
-
+'''
 recipe-recommendation-api/
 │
 ├── api/
@@ -33,6 +33,7 @@ recipe-recommendation-api/
 │   └── index.html                # 🌐 Main HTML file for the web interface
 │
 └── README.md                     # 📖 Project overview and instructions
+'''
 
 
 ## 🌟 Project Overview
