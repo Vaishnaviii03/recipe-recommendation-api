@@ -6,13 +6,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 import ast
 
-app = Flask(__name__, static_folder='D:\\Recipe Recommendation\\static', template_folder='D:\\Recipe Recommendation\\templates')
+app = Flask(__name__, static_folder='D:\\Recipe Recommendation-api-main\\static', template_folder='D:\\Recipe Recommendation-api-main\\templates')
 
 # Load vocabulary and DataFrame
-with open('models\\recipe_recommendation_model.pkl', 'rb') as f:
+with open('D:\\Recipe Recommendation-api-main\\models\\recipe_recommendation_model.pkl', 'rb') as f:
     vocab = pickle.load(f)
 
-df = pd.read_csv('data\\processed\\recipes_processed.csv')
+df = pd.read_csv('D:\\Recipe Recommendation-api-main\\data\\processed\\recipes_processed.csv')
 
 # Convert the 'Ingredient_Vector' column from string to list (if it was saved as a string)
 df['Ingredient_Vector'] = df['Ingredient_Vector'].apply(ast.literal_eval)
