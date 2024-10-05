@@ -82,6 +82,16 @@ Ensure you have Python 3.x installed on your system. You will also need to insta
 
 2. **Access the Web Interface**: Open a browser and go to `http://127.0.0.1:5000/`. You can input your ingredients, and the system will return recipe recommendations.
 
+## 🧪 Testing the API
+
+You can use the `testapi.py` file to test the Flask API endpoints by running the script. The script sends a POST request with user-provided ingredients to the `/api/recommend` route and displays the returned recipe recommendations.
+
+### Example usage:
+
+```bash
+python testapi.py
+
+```
 ### 🧠 Model Training
 
 To train or retrain the recommendation model:
