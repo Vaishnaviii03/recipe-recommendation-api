@@ -14,6 +14,7 @@ This repository contains the code and resources for a **Recipe Recommendation Sy
     - `app.py`                   # 🖥️ Main Flask application
     - `route.py`                 # 🔄 API route definitions
     - `requirements.txt`         # 📦 Python dependencies
+    - `testapi.py`               # Testing API
   - **data/**
     - **raw/**
       - `recipes_raw.csv`       # 📊 Raw recipe data
@@ -33,16 +34,20 @@ This repository contains the code and resources for a **Recipe Recommendation Sy
   - `README.md`                  # 📖 Project overview and instructions
 
 
-
 ## 🌟 Project Overview
 
 The **Recipe Recommendation System** allows users to get recipe recommendations based on the ingredients they provide. The project is structured as follows:
 
-- **📊 Data Collection**: Recipes are scraped from the web using the script in the `scraping` folder.
-- **🧹 Data Preprocessing**: Raw recipe data is cleaned and processed to generate the `recipes_processed.csv` file.
-- **🤖 Model Training**: A machine learning model is trained using the preprocessed data and saved as `recipe_recommendation_model.pkl`.
-- **🖥️ API**: A Flask-based API serves the recommendations, with routes defined in `route.py` and served via `app.py`.
-- **🌐 Web Interface**: The API is connected to a simple web interface (`index.html`), where users can input ingredients and get recipe recommendations.
+- **📊 Data Collection**: Recipes are scraped from the web using the script in the `scraping/` folder. This script collects recipe data, including ingredients, preparation methods, and images from multiple sources, saving them in CSV format for further processing.
+  
+- **🧹 Data Preprocessing**: Raw recipe data is cleaned and processed to generate the `recipes_processed.csv` file. This involves cleaning ingredient lists, removing duplicates, and converting the data into a format suitable for machine learning, with ingredient vectors created for each recipe.
+
+- **🤖 Model Training**: A machine learning model is trained using the preprocessed data and saved as `recipe_recommendation_model.pkl`. The model uses cosine similarity to recommend recipes based on ingredient vectors, ensuring relevant and personalized recommendations for the user.
+
+- **🖥️ API**: A Flask-based API serves the recommendations, with routes defined in `route.py` and served via `app.py`. The API accepts user input (a list of ingredients) and returns a list of recommended recipes. It processes the input to generate a vector representation and calculates similarity scores to find matching recipes.
+
+- **🌐 Web Interface**: The API is connected to a simple web interface (`index.html`), where users can input ingredients and get recipe recommendations. The web interface allows for easy interaction with the recommendation system, displaying recipe suggestions.
+
 
 ## 🚀 Getting Started
 
