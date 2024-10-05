@@ -11,7 +11,8 @@ This repository contains the code and resources for a **Recipe Recommendation Sy
 
 - **recipe-recommendation-api/**
   - **api/**
-    - `app.py`                   # 🖥️ Main Flask application
+    - `app.py`                   # 🖥️ Main Flask application for API
+    - `main.py`                  # Flask application for Website
     - `route.py`                 # 🔄 API route definitions
     - `requirements.txt`         # 📦 Python dependencies
     - `testapi.py`               # Testing API
@@ -77,7 +78,7 @@ Ensure you have Python 3.x installed on your system. You will also need to insta
 1. **Start the Flask API**:
     ```bash
     cd api
-    python app.py
+    python main.py
     ```
 
 2. **Access the Web Interface**: Open a browser and go to `http://127.0.0.1:5000/`. You can input your ingredients, and the system will return recipe recommendations.
