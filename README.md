@@ -92,6 +92,18 @@ You can use the `testapi.py` file to test the Flask API endpoints by running the
 python testapi.py
 
 ```
+
+## 📡 API Example
+
+### Request
+Send a POST request to the `/api/recommend` endpoint with a JSON body containing the list of ingredients:
+
+```json
+{
+  "ingredients": "tomato, cheese, basil"
+}
+```
+
 ### 🧠 Model Training
 
 To train or retrain the recommendation model:
